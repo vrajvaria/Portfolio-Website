@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vraj Varia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./My Accomplishments.css">
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <p>Vraj Varia</p>
+        </div>
+        <nav class="right">
+            <ul>
+                <li><a href="./Homepage.html"><i class="fa-solid fa-house-user"></i></i>Home</a></li>
+                <li><a href="./About Me.html"><i class="fa-solid fa-user"></i>About Me</a></li>
+                <!-- <li><a href=""><i class="fa-solid fa-laptop-code"></i></i>My Projects</a></li> -->
+                <li><a href=""><i class="fa-solid fa-certificate"></i>Accomplishments</a></li>
+                <li><a href="./Contact Me.html"><i class="fa-solid fa-envelope"></i>Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <center>
+            <h1>My Accomplishments</h1>
+        </center>
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="./Bits & Bytes.jpeg" alt="Image 1" />
+            </div>
+            <div class="image-item">
+                <img src="./Basic Python.png" alt="Image 2" />
+            </div>
+            <div class="image-item">
+                <img src="Figma.png" alt="Image 3" />
+            </div>
+            <div class="image-item">
+                <img src="./Google Analytics.jpeg" alt="Image 4" />
+            </div>
+            <div class="image-item">
+                <img src="./HTML & CSS.png" alt="Image 5" />
+            </div>
+            <div class="image-item">
+                <img src="./Learning LinkedIn.png" alt="Image 6" />
+            </div>
+            <div class="overlay" id="overlay">
+                <img src="" alt="Full Size Image" id="fullImage" />
+              </div>
+        </div>
+    </main>
+    <footer>
+        <div class="left">
+            <p>Vraj Varia</p>
+        </div>
+        <div class="connect">
+            <a href="https://www.linkedin.com/in/iamvrajvaria"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+            <a href="https://www.twitter.com/VariaVraj"><i class="fa-brands fa-square-x-twitter fa-xl"></i></a>
+            <a href="https://www.instagram.com/iamvrajvaria"><i class="fa-brands fa-square-instagram fa-xl"></i></a>
+        </div>
+    </footer>
+    <script>
+        const imageItems = document.querySelectorAll(".image-item");
+        const overlay = document.getElementById("overlay");
+        const fullImage = document.getElementById("fullImage");
+
+        imageItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                const imgSrc = item.querySelector("img").src;
+                fullImage.src = imgSrc;
+                overlay.classList.add("active");
+            });
+        });
+
+        overlay.addEventListener("click", () => {
+            overlay.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>

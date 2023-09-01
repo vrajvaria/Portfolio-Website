@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vraj Varia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./Contact Me.css">
+    <script>
+      async function sendToDB() {
+        try {
+          document.getElementById("submit").innerHTML="Submitting"
+          const name = getInputValueById("name");
+          const country = getInputValueById("country");
+          const mail = getInputValueById("email");
+          const message = getInputValueById("message");
+          const mob = getInputValueById("mob");
+          const headerList = {
+            "Content-Type": "application/json",
+          };
+          const body = JSON.stringify({
+            message: message,
+            email: mail,
+            mob: mob,
+            country: country,
+            name: name,
+          });
+          let headersList = {
+            "Content-Type": "application/json",
+          };
+          const API_BACKEND_URL =
+            "https://backend-jet-alpha.vercel.app/api/saveToDB";
+          let response = await fetch(API_BACKEND_URL, {
+            method: "POST",
+            body: body,
+            headers: headersList,
+          });
+          if (response.ok) {
+            alert("Thanks for your response");
+            window.location.reload();
+          }
+        } catch (error) {
+          console.error(error);
+        }
+        finally{
+          document.getElementById="submit".innerHTML="Submit"
+        }
+      }
+      function validateEmail() {
+        const mail = getInputValueById("email");
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(mail)) {
+          document.getElementById("email").value = "";
+          alert("Please enter valid email");
+        }
+      }
+      function getInputValueById(inputId) {
+        let value = document.getElementById(inputId).value;
+        return value;
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="left">
+        <p>Vraj Varia</p>
+      </div>
+      <nav class="right">
+        <ul>
+          <li>
+            <a href="./Homepage.html"
+              ><i class="fa-solid fa-house-user"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="./About Me.html"
+              ><i class="fa-solid fa-user"></i>About Me</a
+            >
+          </li>
+          <!-- <li>
+            <a href=""><i class="fa-solid fa-laptop-code"></i>My Projects</a>
+          </li> -->
+          <li>
+            <a href="./My Accomplishments.html"
+              ><i class="fa-solid fa-certificate"></i>Accomplishments</a
+            >
+          </li>
+          <li>
+            <a href="./Contact Me.html"
+              ><i class="fa-solid fa-envelope"></i>Contact Me</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="contactForm">
+        <div class="container">
+          <form id="myForm">
+            <label>Name</label>
+            <input id="name" type="text" placeholder="Your name.." required />
+
+            <br />
+
+            <label>Country</label>
+            <input
+              id="country"
+              type="text"
+              placeholder="Your country.."
+              required
+            />
+
+            <br />
+
+            <label>Email:</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Your email.."
+              length="100"
+              required
+              onblur="validateEmail()"
+            />
+
+            <br />
+
+            <label>Phone:</label>
+            <input
+              id="mob"
+              type="text"
+              pattern="^[0-9]*$"
+              placeholder="Your mobile number.."
+              maxlength="10"
+              required
+            />
+
+            <br />
+
+            <label>Message</label>
+            <textarea
+              id="message"
+              placeholder="Write something.."
+              style="height: 200px"
+              type="text"
+              required
+            ></textarea>
+
+            <br />
+
+            <button type="reset">Reset</button>
+            <button onclick="sendToDB()" type="button" id="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="left">
+        <p>Vraj Varia</p>
+      </div>
+
+      <div class="connect">
+        <a href="https://www.linkedin.com/in/iamvrajvaria"
+          ><i class="fa-brands fa-linkedin fa-xl"></i
+        ></a>
+        <a href="https://www.twitter.com/VariaVraj"
+          ><i class="fa-brands fa-square-x-twitter fa-xl"></i
+        ></a>
+        <a href="https://www.instagram.com/iamvrajvaria"
+          ><i class="fa-brands fa-square-instagram fa-xl"></i
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>

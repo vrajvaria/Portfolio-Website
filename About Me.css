@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.left {
+  font-size: 2rem;
+  color: black;
+}
+
+header {
+  background-color: bisque;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  top: 0;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul li a:hover {
+  color: red;
+  font-size: 1rem;
+}
+
+li i {
+  margin-right: 6px;
+}
+
+.firstSection {
+  align-items: center;
+}
+
+.purple {
+  color: blueviolet;
+}
+
+.firstSection img {
+  margin-top: 50px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
+.secondSection {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 15%;
+  row-gap: 24%;
+  margin-block: 2%;
+  /* margin-top: 5px; */
+}
+
+.firstSection p {
+  margin-top: 24px;
+  width: 80%;
+  margin-inline: auto;
+  font-size: 1.5rem;
+  /* text-align: justify; */
+}
+
+footer {
+  margin-top: 10px;
+  width: 100%;
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+}
+
+.connect i {
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  font-size: 44px;
+}
+
+.connect {
+  margin-right: 10px;
+}
+
+@media (max-width: 688px) {
+  .grid-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: antiquewhite; */
+    /* gap: 25%; */
+  }
+  footer {
+    margin-top: 10px;
+    width: 100%;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;
+  }
+  footer .connect{
+    display: flex;
+    flex-direction: row;
+    gap: 16%;
+    justify-content: space-evenly;
+    margin-block: 4%;
+  }
+
+}
